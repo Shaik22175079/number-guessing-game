@@ -48,3 +48,5 @@ do
     echo "It's higher than that, guess again:"
   fi
 done
+
+# Minor formatting fix for FCC compliance
