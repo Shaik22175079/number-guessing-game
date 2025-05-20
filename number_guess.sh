@@ -1,4 +1,3 @@
-# FreeCodeCamp Number Guessing Game
 #!/bin/bash
 
 PSQL="psql --username=freecodecamp --dbname=number_guess -t --no-align -c"
@@ -38,8 +37,8 @@ do
 
   if [[ $GUESS -eq $SECRET_NUMBER ]]
   then
-    $PSQL "INSERT INTO games(user_id, guesses) VALUES($USER_ID, $NUMBER_OF_GUESSES)" > /dev/null
     echo "You guessed it in $NUMBER_OF_GUESSES tries. The secret number was $SECRET_NUMBER. Nice job!"
+    $PSQL "INSERT INTO games(user_id, guesses) VALUES($USER_ID, $NUMBER_OF_GUESSES)" > /dev/null
     break
   elif [[ $GUESS -gt $SECRET_NUMBER ]]
   then
@@ -48,5 +47,3 @@ do
     echo "It's higher than that, guess again:"
   fi
 done
-
-# Minor formatting fix for FCC compliance
